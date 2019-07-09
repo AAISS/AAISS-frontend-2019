@@ -1,0 +1,23 @@
+.text-dpink {
+    color: #c1766e;
+}
+
+.text-dgray {
+    color: #dddcd3;
+}
+
+#aboutSection .row {
+    padding-top: 30px;
+}
+
+
+#aboutSection p {
+    line-height: 30px;
+}
+
+
+#speakersSection {
+    min-height: 100%;
+    width: 100%;
+    background-color: #ececec;
+}

@@ -1,31 +1,46 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="h-100">
+        <TopMenu></TopMenu>
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
+        <Footer></Footer>
     </div>
-    <router-view/>
-  </div>
 </template>
 
+<script>
+    import TopMenu from '@/components/TopMenu'
+    import Footer from '@/components/Footer'
+
+    export default {
+        name: 'App',
+        data: function () {
+            return {}
+        },
+        components: {
+            TopMenu, Footer
+        }
+
+    }
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+    html, body {
+        height: 100%;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition-duration: 0.3s;
+        transition-property: opacity;
+        transition-timing-function: ease;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    div[style*="z-index: 10000"] {
+        display: none !important;
+    }
 </style>
