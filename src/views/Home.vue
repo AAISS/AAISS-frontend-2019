@@ -79,60 +79,11 @@
                                 <img src="../assets/img/brain.png" alt="img" class="rounded-circle">
                             </div>
                             <div class="text-center speakerInfo">
-                                <h5 class="">Masoud Saba'ee</h5>
+                                <router-link to="/speaker/id/1"><h5 class="">Masoud Saba'ee</h5></router-link>
                                 <h6 class="">PhD, Amirkabir UT</h6>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3">
-                        <div class="speakerBlock">
-                            <div class="text-center imgWrapper">
-                                <img src="../assets/img/brain.png" alt="img" class="rounded-circle">
-                            </div>
-                            <div class="text-center speakerInfo">
-                                <h5 class="">Masoud Saba'ee</h5>
-                                <h6 class="">PhD, Amirkabir UT</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="speakerBlock">
-                            <div class="text-center imgWrapper">
-                                <img src="../assets/img/brain.png" alt="img" class="rounded-circle">
-                            </div>
-                            <div class="text-center speakerInfo">
-                                <h5 class="">Masoud Saba'ee</h5>
-                                <h6 class="">PhD, Amirkabir UT</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="speakerBlock">
-                            <div class="text-center imgWrapper">
-                                <img src="../assets/img/brain.png" alt="img" class="rounded-circle">
-                            </div>
-                            <div class="text-center speakerInfo">
-                                <h5 class="">Masoud Saba'ee</h5>
-                                <h6 class="">PhD, Amirkabir UT</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="speakerBlock">
-                            <div class="text-center imgWrapper">
-                                <img src="../assets/img/brain.png" alt="img" class="rounded-circle">
-                            </div>
-                            <div class="text-center speakerInfo">
-                                <h5 class="">Masoud Saba'ee</h5>
-                                <h6 class="">PhD, Amirkabir UT</h6>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div class="row justify-content-center buttonsWrapper">
@@ -152,14 +103,32 @@
 
 <script>
     // @ is an alias to /src
+    import axios from 'axios'
 
     export default {
         name: 'Home',
-        components: {},
-        created(){
-
+        components: {
+            speakers: [],
+        }, methods: {
+            getSpeakers: function () {
+                axios({
+                    url: 'http://google.com/asghar',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: 'GET',
+                }).then((response) => {
+                    this.speakers = response.data;
+                }).catch((error) => {
+                    window.console.log(error);
+                })
+            }
+        },
+        created() {
+            this.getSpeakers();
         },
         mounted() {
+            scrollTo(0, 0);
             particlesJS("particles-js", {
                 "particles": {
                     "number": {
@@ -402,10 +371,12 @@
         footer .logosRow .col-md-4 {
             text-align: center !important;
         }
+
         .titleCol h1 {
             font-size: 3rem;
         }
     }
+
     @media only screen and (min-width: 0) and (max-width: 415px) {
         .titleCol h1 {
             font-size: 2rem;
