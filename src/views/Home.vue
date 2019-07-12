@@ -72,11 +72,15 @@
                         <h1 class="text-center font-weight-bold text-white">Speakers</h1>
                     </div>
                 </div>
-                <div class="row pt-3">
-                    <div class="col-md-3" :key="speakers.indexOf(speaker)" v-for="speaker in speakers">
-                        <SpeakerBlock :speaker="speaker" showRegButton="false"></SpeakerBlock>
+                <div class="row pt-3" v-if="dataLoading">
+                    <h2 class="text-center">Loading...</h2>
+                </div>
+                <div class="row pt-3" v-else>
+                    <div class="col-lg-3" :key="speaker.id" v-for="speaker in speakers">
+                        <SpeakerBlock :speaker="speaker"></SpeakerBlock>
                     </div>
                 </div>
+
 
                 <div class="row justify-content-center">
                     <div class="col-md-6 justify-content-center">
@@ -101,7 +105,9 @@
     export default {
         name: 'Home',
         data: function () {
-            return {}
+            return {
+                dataLoading: true,
+            }
         },
         computed: {
             speakers: function () {
@@ -113,6 +119,7 @@
         },
         methods: {
             getSpeakers: function () {
+                this.dataLoading = true;
                 axios({
                     url: this.$store.getters.getApi + '/speakers/',
                     headers: {
@@ -122,8 +129,10 @@
                 }).then((response) => {
                     window.console.log(response.data.results);
                     this.$store.commit('updateSpeakers', response.data.results);
+                    this.dataLoading = false;
                     // this.speakers = response.data.results;
                 }).catch((error) => {
+                    this.dataLoading = false;
                     window.console.log(error);
                 })
             },
@@ -292,6 +301,15 @@
         text-align: center;
         line-height: 65px;
         font-weight: 700;
+        cursor: default;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+                                         supported by Chrome and Opera */
     }
 
     .brainImage {
@@ -306,6 +324,7 @@
         width: 100%;
         background-color: #B7867E;
         color: white;
+        min-height: 100%;
     }
 
     #aboutSection h2 {
@@ -319,6 +338,7 @@
 
     #speakersSection {
         background-color: #B7867E;
+        min-height: 100vh;
     }
 
     .regBtn {

@@ -1,10 +1,10 @@
 <template>
     <section id="speakersSection">
-        <div id="particles-js" class="position-absolute"></div>
-        <div class="container pt-5">
+        <!--        <div id="particles-js" class="position-absolute"></div>-->
+        <div class="container pt-5" v-if="speaker != null">
             <div class="row mt-5">
                 <div class="col-md-3">
-                    <SpeakerBlock :speaker="speaker" showRegButton="true"></SpeakerBlock>
+                    <SpeakerBlock :speaker="speaker"></SpeakerBlock>
                     <a href="#" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
                 </div>
                 <div class="col-md-9 infoBlock">
@@ -26,7 +26,6 @@
                         </time>
                     </p>
 
-
                     <strong>Abstract</strong>
                     <p class="text-justify" style="line-height:30px;">
                         {{speaker.abstract}}
@@ -45,154 +44,27 @@
         name: "Speaker",
         data: function () {
             return {}
+        }, computed: {
+            speaker: function () {
+                for (let i = 0; i < this.$store.getters.getSpeakers.length; i++) {
+                    if (this.$store.getters.getSpeakers[i].id == this.$route.params.id) {
+                        return this.$store.getters.getSpeakers[i];
+                    }
+                }
+                return null;
+            }
         },
         components: {
             SpeakerBlock
         },
-        computed: {
-            speaker: function () {
-                return this.$store.getters.getSpeakers[this.$route.params.id - 1];
-            }
-        },
-        methods: {
-            // initParticles: function () {
-            //     particlesJS("particles-js", {
-            //         "particles": {
-            //             "number": {
-            //                 "value": 100,
-            //                 "density": {
-            //                     "enable": true,
-            //                     "value_area": 631.3181133058181
-            //                 }
-            //             },
-            //             "color": {
-            //                 "value": "#9B9D97"
-            //             },
-            //             "shape": {
-            //                 "type": "circle",
-            //                 "stroke": {
-            //                     "width": 0,
-            //                     "color": "#000000"
-            //                 },
-            //                 "polygon": {
-            //                     "nb_sides": 5
-            //                 },
-            //                 "image": {
-            //                     "src": "img/github.svg",
-            //                     "width": 100,
-            //                     "height": 100
-            //                 }
-            //             },
-            //             "opacity": {
-            //                 "value": 1,
-            //                 "random": false,
-            //                 "anim": {
-            //                     "enable": false,
-            //                     "speed": 1,
-            //                     "opacity_min": 0.1,
-            //                     "sync": false
-            //                 }
-            //             },
-            //             "size": {
-            //                 "value": 2,
-            //                 "random": true,
-            //                 "anim": {
-            //                     "enable": false,
-            //                     "speed": 40,
-            //                     "size_min": 0.1,
-            //                     "sync": false
-            //                 }
-            //             },
-            //             "line_linked": {
-            //                 "enable": true,
-            //                 "distance": 150,
-            //                 "color": "#9B9D97",
-            //                 "opacity": 1,
-            //                 "width": 1
-            //             },
-            //             "move": {
-            //                 "enable": true,
-            //                 "speed": 3,
-            //                 "direction": "none",
-            //                 "random": false,
-            //                 "straight": false,
-            //                 "out_mode": "out",
-            //                 "bounce": false,
-            //                 "attract": {
-            //                     "enable": false,
-            //                     "rotateX": 600,
-            //                     "rotateY": 1200
-            //                 }
-            //             }
-            //         },
-            //         "interactivity": {
-            //             "detect_on": "canvas",
-            //             "events": {
-            //                 "onhover": {
-            //                     "enable": true,
-            //                     "mode": "grab"
-            //                 },
-            //                 "onclick": {
-            //                     "enable": false,
-            //                     "mode": "push"
-            //                 },
-            //                 "resize": true
-            //             },
-            //             "modes": {
-            //                 "grab": {
-            //                     "distance": 150,
-            //                     "line_linked": {
-            //                         "opacity": 1
-            //                     }
-            //                 },
-            //                 "bubble": {
-            //                     "distance": 400,
-            //                     "size": 40,
-            //                     "duration": 2,
-            //                     "opacity": 8,
-            //                     "speed": 3
-            //                 },
-            //                 "repulse": {
-            //                     "distance": 200,
-            //                     "duration": 0.4
-            //                 },
-            //                 "push": {
-            //                     "particles_nb": 4
-            //                 },
-            //                 "remove": {
-            //                     "particles_nb": 2
-            //                 }
-            //             }
-            //         },
-            //         "retina_detect": true
-            //     });
-            //     var count_particles, stats, update;
-            //     stats = new Stats;
-            //     stats.setMode(0);
-            //     stats.domElement.style.position = 'absolute';
-            //     stats.domElement.style.left = '0px';
-            //     stats.domElement.style.top = '0px';
-            //     document.body.appendChild(stats.domElement);
-            //     count_particles = document.querySelector('.js-count-particles');
-            //     update = function () {
-            //         stats.begin();
-            //         stats.end();
-            //         if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-            //             count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-            //         }
-            //         requestAnimationFrame(update);
-            //     };
-            //     requestAnimationFrame(update);
-            // }
-        },
+        methods: {},
         created() {
 
-            if (this.speaker == null || this.speaker == undefined) {
-                this.$router.push('/');
-            }
         },
         mounted() {
-            window.console.log('speaker from state : ', this.speaker);
+            if (this.speaker == null) {
+                this.$router.push('/');
+            }
             scrollTo(0, 0);
         }
 

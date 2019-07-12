@@ -4,12 +4,11 @@
             <img :src="speaker.image_path" alt="img" class="rounded-circle img-fluid" draggable="false">
         </div>
         <div class="text-center speakerInfo">
-            <router-link :to="speaker.url.replace(this.$store.getters.getApi,'')">
-                <h5 class="">{{speaker.name}}</h5>
+            <router-link :to="'/speakers/' + speaker.id">
+                {{speaker.name}}
             </router-link>
-            <h6 class="">{{speaker.position}}</h6>
+            <h6>{{speaker.position}}</h6>
         </div>
-        <!--        <a href="#" class="btn btn-primary btn-lg btn-block regBtn" v-if="showRegButton">Register</a>-->
     </div>
 </template>
 
@@ -21,7 +20,6 @@
         },
         props: {
             speaker: {},
-            showRegButton: false,
         }
     }
 </script>
@@ -54,6 +52,16 @@
     .speakerInfo h6 {
         margin-top: 20px;
         color: #707070;
+        line-height: 30px;
+        padding: 5px 10px;
+    }
+
+    .speakerLink {
+        text-decoration: none;
+    }
+
+    .speakerLink:hover {
+        color: black;
     }
 
     .speakerInfo {
