@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light fixed-top"
-         :class="{'bg-white' : navbarWhiteColorReady,'navbar-shadow': navbarWhiteColorReady}">
+         :class="{'bg-white' : navbarWhiteColorReady,'navbar-shadow': navbarShadowReady}">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aaissNavbar"
                 aria-controls="aaissNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="aaissNavbar">
             <ul class="navbar-nav mt-2 mt-lg-0 font-weight-bold">
                 <li class="nav-item active">
-                    <router-link class="nav-link" to="/">Home</router-link>
+                    <a class="nav-link" @click.prevent="handleHomeButton()">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="http://aaiss.ceit.aut.ac.ir/#aboutSection" class="nav-link">About</a>
@@ -38,7 +38,15 @@
                 navbarShadowReady: false,
             }
         },
-        methods: {},
+        methods: {
+            handleHomeButton: function () {
+                if (this.$route.path == '/') {
+                    scrollTo(0, 0);
+                } else {
+                    this.$router.push('/');
+                }
+            }
+        },
         created() {
         },
         mounted() {
@@ -78,6 +86,7 @@
     }
 
     .nav-link {
+        cursor:pointer;
         color: #c1766e !important;
     }
 
