@@ -26,15 +26,16 @@
                         </time>
                     </p>
 
+                    <strong>Abstract</strong>
+                    <p class="text-justify" style="line-height:30px;">
+                        {{speaker.abstract}}
+                    </p>
+
                     <strong>Bio</strong>
                     <p class="text-justify" style="line-height:30px">
                         {{speaker.bio}}
                     </p>
 
-                    <strong>Abstract</strong>
-                    <p class="text-justify" style="line-height:30px;">
-                        {{speaker.abstract}}
-                    </p>
                 </div>
             </div>
         </div>
