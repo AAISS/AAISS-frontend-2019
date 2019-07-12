@@ -46,6 +46,10 @@
 </script>
 
 <style>
+    *{
+        scroll-behavior: smooth;
+    }
+
     html, body {
         height: 100%;
     }

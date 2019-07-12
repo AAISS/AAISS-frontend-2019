@@ -13,14 +13,14 @@
                     <router-link class="nav-link" to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <a href="#aboutSection" class="nav-link">About</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/#aboutSection" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#speakersSection" class="nav-link">Speakers</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/#speakersSection" class="nav-link">Speakers</a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <router-link to="/schedule" class="nav-link">Schedule</router-link>-->
-<!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <router-link to="/schedule" class="nav-link">Schedule</router-link>-->
+                <!--                </li>-->
                 <li class="nav-item">
                     <router-link to="/staff" class="nav-link">Staff</router-link>
                 </li>
