@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Speaker from './views/Speaker.vue'
+import Staff from './views/Staff'
 import NotFound from './views/NotFound'
 
 Vue.use(Router);
@@ -18,6 +19,11 @@ export default new Router({
             path: '/speakers/:id',
             name: 'Speaker',
             component: Speaker,
-        },{ path: "*", component: NotFound }
+        }, {
+            path: '/staff',
+            name: 'Staff',
+            component: Staff
+        },
+        {path: "*", component: NotFound}
     ]
 })

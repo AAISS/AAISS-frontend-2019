@@ -18,12 +18,9 @@
                 <li class="nav-item">
                     <a href="#speakersSection" class="nav-link">Speakers</a>
                 </li>
-                <li class="nav-item">
-                    <router-link to="/schedule" class="nav-link">Schedule</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/workshops" class="nav-link">Workshops</router-link>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <router-link to="/schedule" class="nav-link">Schedule</router-link>-->
+<!--                </li>-->
                 <li class="nav-item">
                     <router-link to="/staff" class="nav-link">Staff</router-link>
                 </li>

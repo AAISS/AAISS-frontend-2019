@@ -1,6 +1,5 @@
 <template>
     <div class="base">
-
         <h1 class="position-absolute">404 Not Found</h1>
     </div>
 </template>
@@ -21,7 +20,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4e3df', endColorstr='#c6c4b6', GradientType=1);
     }
 
-    h1{
+    h1 {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

@@ -7,14 +7,14 @@
                 <div class=" row pt-5">
                     <!--<div class="col-md-2"></div>-->
                     <div class="col-md-12 titleCol">
-                        <h1>Amirkabir Artificial Intelligence Summer Summit</h1>
+                        <h1 class="noSelect">Amirkabir Artificial Intelligence Summer Summit</h1>
                     </div>
                 </div>
             </div>
-            <img src="../assets/img/brain.png" alt="brain" class="img-fluid brainImage">
+            <img src="../assets/img/brain.png" alt="brain image" class="img-fluid brainImage noSelect" draggable="false">
 
-            <img src="https://apa.aut.ac.ir/en/index_data/aut.png" alt="" class="position-absolute"
-                 style="left:30px;bottom:30px;width:100px;height:100px;">
+            <img src="https://apa.aut.ac.ir/en/index_data/aut.png" class="position-absolute autLogo noSelect"
+                 alt="amirkabir logo" draggable="false">
         </section>
         <section id="aboutSection">
             <div class="container">
@@ -302,14 +302,15 @@
         line-height: 65px;
         font-weight: 700;
         cursor: default;
+    }
+
+    .noSelect{
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
         -khtml-user-select: none; /* Konqueror HTML */
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none;
-        /* Non-prefixed version, currently
-                                         supported by Chrome and Opera */
     }
 
     .brainImage {
@@ -318,6 +319,14 @@
         left: 50%;
         top: 66%;
         transform: translate(-50%, -50%);
+
+    }
+
+    .autLogo {
+        left: 30px;
+        bottom: 30px;
+        width: 100px;
+        height: 100px;
     }
 
     #aboutSection {
