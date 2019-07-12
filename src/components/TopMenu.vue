@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="aaissNavbar">
             <ul class="navbar-nav mt-2 mt-lg-0 font-weight-bold">
                 <li class="nav-item active">
-                    <router-link class="nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
+                    <router-link class="nav-link" to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/about" class="nav-link">About</router-link>
+                    <a href="#aboutSection" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/speakers" class="nav-link">Speakers</router-link>
+                    <a href="#speakersSection" class="nav-link">Speakers</a>
                 </li>
                 <li class="nav-item">
                     <router-link to="/schedule" class="nav-link">Schedule</router-link>
