@@ -73,24 +73,16 @@
                     </div>
                 </div>
                 <div class="row pt-3">
-                    <div class="col-md-3">
-                        <div class="speakerBlock">
-                            <div class="text-center imgWrapper">
-                                <img src="../assets/img/brain.png" alt="img" class="rounded-circle">
-                            </div>
-                            <div class="text-center speakerInfo">
-                                <router-link to="/speaker/id/1"><h5 class="">Masoud Saba'ee</h5></router-link>
-                                <h6 class="">PhD, Amirkabir UT</h6>
-                            </div>
-                        </div>
+                    <div class="col-md-3" :key="speakers.indexOf(speaker)" v-for="speaker in speakers">
+                        <SpeakerBlock :speaker="speaker" showRegButton="false"></SpeakerBlock>
                     </div>
                 </div>
 
-                <div class="row justify-content-center buttonsWrapper">
+                <div class="row justify-content-center">
                     <div class="col-md-6 justify-content-center">
                         <div class="row">
                             <div class="col-md-6 mx-auto">
-                                <a href="#" class="btn btn-primary btn-lg btn-block float-left">Register</a>
+                                <a href="#" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
                             </div>
                         </div>
                     </div>
@@ -104,158 +96,175 @@
 <script>
     // @ is an alias to /src
     import axios from 'axios'
+    import SpeakerBlock from '../components/SpeakerBlock'
 
     export default {
         name: 'Home',
+        data: function () {
+            return {}
+        },
+        computed: {
+            speakers: function () {
+                return this.$store.getters.getSpeakers;
+            }
+        },
         components: {
-            speakers: [],
-        }, methods: {
+            SpeakerBlock,
+        },
+        methods: {
             getSpeakers: function () {
                 axios({
-                    url: 'http://google.com/asghar',
+                    url: this.$store.getters.getApi + '/speakers/',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     method: 'GET',
                 }).then((response) => {
-                    this.speakers = response.data;
+                    window.console.log(response.data.results);
+                    this.$store.commit('updateSpeakers', response.data.results);
+                    // this.speakers = response.data.results;
                 }).catch((error) => {
                     window.console.log(error);
                 })
+            },
+            initParticles: function () {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 100,
+                            "density": {
+                                "enable": true,
+                                "value_area": 631.3181133058181
+                            }
+                        },
+                        "color": {
+                            "value": "#9B9D97"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            },
+                            "image": {
+                                "src": "img/github.svg",
+                                "width": 100,
+                                "height": 100
+                            }
+                        },
+                        "opacity": {
+                            "value": 1,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 2,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#9B9D97",
+                            "opacity": 1,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 3,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": false,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 150,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+                var count_particles, stats, update;
+                stats = new Stats;
+                stats.setMode(0);
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0px';
+                stats.domElement.style.top = '0px';
+                document.body.appendChild(stats.domElement);
+                count_particles = document.querySelector('.js-count-particles');
+                update = function () {
+                    stats.begin();
+                    stats.end();
+                    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                    }
+                    requestAnimationFrame(update);
+                };
+                requestAnimationFrame(update);
             }
         },
         created() {
+            window.console.log(this.$store.getters.getApi);
+            window.console.log('getting speakers...')
             this.getSpeakers();
         },
         mounted() {
+            this.initParticles();
             scrollTo(0, 0);
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": {
-                        "value": 100,
-                        "density": {
-                            "enable": true,
-                            "value_area": 631.3181133058181
-                        }
-                    },
-                    "color": {
-                        "value": "#9B9D97"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        },
-                        "image": {
-                            "src": "img/github.svg",
-                            "width": 100,
-                            "height": 100
-                        }
-                    },
-                    "opacity": {
-                        "value": 1,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 2,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#9B9D97",
-                        "opacity": 1,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 3,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": false,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 150,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-            var count_particles, stats, update;
-            stats = new Stats;
-            stats.setMode(0);
-            stats.domElement.style.position = 'absolute';
-            stats.domElement.style.left = '0px';
-            stats.domElement.style.top = '0px';
-            document.body.appendChild(stats.domElement);
-            count_particles = document.querySelector('.js-count-particles');
-            update = function () {
-                stats.begin();
-                stats.end();
-                if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-                    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-                }
-                requestAnimationFrame(update);
-            };
-            requestAnimationFrame(update);
         }
     }
 </script>
@@ -275,6 +284,7 @@
         top: 22%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 10;
     }
 
     .titleCol h1 {
@@ -311,54 +321,14 @@
         background-color: #B7867E;
     }
 
-    .speakerBlock {
-        border-radius: 15px;
-        background-color: #ffffff;
-        min-height: 100px;
+    .regBtn {
         margin-top: 20px;
-        margin-right: 5px;
-        margin-left: 5px;
-        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    }
-
-    .imgWrapper img {
-        width: 110px;
-        height: 110px;
-    }
-
-    .speakerBlock .imgWrapper {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .speakerInfo h5 {
-        color: #328ebf;
-    }
-
-    .speakerInfo h6 {
-        margin-top: 20px;
-        color: #707070;
-    }
-
-    .speakerInfo {
-        padding-bottom: 30px;
-    }
-
-
-    .buttonsWrapper {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .buttonsWrapper a.btn {
+        margin-bottom: 20px;
         background-color: #C6C2C4;
         border: none;
-        margin-top: 10px;
     }
 
-    .buttonsWrapper a.btn:hover {
+    .regBtn:hover {
         background-color: white;
         color: #C6C2C4;
     }
@@ -368,10 +338,6 @@
     }
 
     @media only screen and (min-width: 416px) and (max-width: 767.98px) {
-        footer .logosRow .col-md-4 {
-            text-align: center !important;
-        }
-
         .titleCol h1 {
             font-size: 3rem;
         }
