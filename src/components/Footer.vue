@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row logosRow">
                 <div class="col-md-4">
-                    <img src="https://apa.aut.ac.ir/en/index_data/aut.png" alt="amirkabir logo" class="img-fluid" draggable="false">
+                    <img src="../assets/img/autLogo.png" alt="amirkabir logo" class="img-fluid" draggable="false">
                 </div>
                 <div class="col-md-4">
                     <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid" draggable="false">
                 </div>
                 <div class="col-md-4 text-right">
-                    <img src="https://apa.aut.ac.ir/en/index_data/aut.png" alt="amirkabir logo" class="img-fluid" draggable="false">
+                    <img src="../assets/img/ceitLogo.png" alt="amirkabir logo" class="img-fluid" draggable="false">
                 </div>
             </div>
         </div>

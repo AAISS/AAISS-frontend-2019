@@ -31,8 +31,8 @@
         components: {
             StaffBlock,
         },
-        computed : {
-            staffList : function(){
+        computed: {
+            staffList: function () {
                 return this.$store.getters.getStaffList;
             }
         },
@@ -56,6 +56,9 @@
                 this.dataLoading = false;
                 window.console.log(error);
             })
+        },
+        mounted() {
+            scrollTo(0, 0);
         }
     }
 </script>

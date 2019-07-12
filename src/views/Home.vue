@@ -13,7 +13,7 @@
             </div>
             <img src="../assets/img/brain.png" alt="brain image" class="img-fluid brainImage noSelect" draggable="false">
 
-            <img src="https://apa.aut.ac.ir/en/index_data/aut.png" class="position-absolute autLogo noSelect"
+            <img src="../assets/img/autLogo.png" class="position-absolute autLogo noSelect"
                  alt="amirkabir logo" draggable="false">
         </section>
         <section id="aboutSection">
@@ -130,7 +130,6 @@
                     window.console.log(response.data.results);
                     this.$store.commit('updateSpeakers', response.data.results);
                     this.dataLoading = false;
-                    // this.speakers = response.data.results;
                 }).catch((error) => {
                     this.dataLoading = false;
                     window.console.log(error);
@@ -267,8 +266,6 @@
             }
         },
         created() {
-            window.console.log(this.$store.getters.getApi);
-            window.console.log('getting speakers...')
             this.getSpeakers();
         },
         mounted() {
@@ -325,7 +322,7 @@
     .autLogo {
         left: 30px;
         bottom: 30px;
-        width: 100px;
+        width: 150px;
         height: 100px;
     }
 
