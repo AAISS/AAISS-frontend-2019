@@ -1,25 +1,31 @@
 <template>
-    <router-link :to="'/speakers/' + speaker.id" class="speakerBlock d-block">
+    <div class="speakerBlock">
         <div class="text-center imgWrapper">
-            <img :src="speaker.image_path" alt="img" class="rounded-circle img-fluid" draggable="false">
+            <img :src="member.image_path" alt="img" class="rounded-circle img-fluid" draggable="false">
         </div>
         <div class="text-center speakerInfo">
-            <router-link :to="'/speakers/' + speaker.id">
-                {{speaker.name}}
-            </router-link>
-            <h6>{{speaker.position}}</h6>
+            <h4 class="memberName">
+                {{member.name}}
+            </h4>
+            <h5 class="memberPosition">
+                {{member.position}}
+            </h5>
+            <h6 class="memberRule">
+                {{member.rule}}
+            </h6>
+
         </div>
-    </router-link>
+    </div>
 </template>
 
 <script>
     export default {
-        name: "SpeakerBlock",
+        name: "CommitteMemberBlock",
         data: function () {
             return {}
         },
         props: {
-            speaker: {},
+            member: {},
         }
     }
 </script>
@@ -29,18 +35,12 @@
         transition: all 0.1s ease-in-out;
         border-radius: 15px;
         background-color: #ffffff;
-        height: 350px;
+        height: 368px;
         margin-top: 15px;
         -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         text-decoration: none;
-    }
-
-    .speakerBlock:hover {
-        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
     }
 
     .imgWrapper img {
@@ -53,15 +53,24 @@
         padding-bottom: 30px;
     }
 
-    .speakerInfo h5 {
-        color: #328ebf;
+    .memberName {
+        font-size: 16px;
     }
 
-    .speakerInfo h6 {
-        margin-top: 20px;
+    .memberPosition {
+        color: #328ebf;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: normal;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .memberRule {
         color: #707070;
         line-height: 30px;
-        padding: 5px 10px;
+        padding-right: 5px;
+        padding-left: 5px;
     }
 
     .speakerInfo {
@@ -70,7 +79,7 @@
 
     @media (max-width: 1199.98px) {
         .speakerBlock {
-            height: 400px;
+            height: 365psx;
         }
     }
 
@@ -79,5 +88,4 @@
             height: auto;
         }
     }
-
 </style>

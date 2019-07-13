@@ -6,24 +6,17 @@
                     <h1 class="text-center font-weight-bold text-white">Staff</h1>
                 </div>
             </div>
-            <div class="row pt-3" v-if="dataLoading">
-                <h2 class="text-center">Loading...</h2>
-            </div>
-            <div class="row pt-3" v-else>
+            <div class="row pt-3">
                 <div class="col-lg-3" :key="staffList.indexOf(staffMember)" v-for="staffMember in staffList">
                     <StaffBlock :staff-member="staffMember"></StaffBlock>
                 </div>
             </div>
 
         </div>
-        <!-- particles.js container -->
-        <!--        <div id="particles-js"></div> &lt;!&ndash; stats - count particles &ndash;&gt;-->
-
     </section>
 </template>
 
 <script>
-    import axios from 'axios'
     import StaffBlock from '../components/StaffBlock'
 
     export default {
@@ -37,25 +30,10 @@
             }
         },
         data: function () {
-            return {
-                dataLoading: false,
-            }
+            return {}
+
         }, created() {
-            axios({
-                url: this.$store.getters.getApi + '/staff/',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                method: 'GET',
-            }).then((response) => {
-                window.console.log(response.data);
-                this.$store.commit('updateStaffList', response.data);
-                this.dataLoading = false;
-                // this.speakers = response.data.results;
-            }).catch((error) => {
-                this.dataLoading = false;
-                window.console.log(error);
-            })
+            let staffListPromise = this.$store.dispatch('getStaff');
         },
         mounted() {
             scrollTo(0, 0);

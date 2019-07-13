@@ -10,7 +10,8 @@
                     </div>
                 </div>
             </div>
-            <img src="../assets/img/brain.png" alt="brain image" class="img-fluid brainImage noSelect" draggable="false">
+            <img src="../assets/img/brain.png" alt="brain image" class="img-fluid brainImage noSelect"
+                 draggable="false">
 
             <img src="../assets/img/autLogo.png" class="position-absolute autLogo noSelect"
                  alt="amirkabir logo" draggable="false">
@@ -19,12 +20,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="font-weight-bold">About</h2>
+                        <h2 class="font-weight-bold">About the Event</h2>
                         <p class="text-justify aboutText">
-                            Given the accelerated pace of Artificial Intelligence and Data Science, Computer Engineering department’s Students’ Scientific Association of Amirkabir University of Technology (CEIT SSC) is organizing its first AAISS (Amirkabir Artificial Intelligence Summer Summit) which consists of a series of talks hosting speakers of USA’s MIT, Stanford, UCLA and UCF, Switzerland’s ETH and EPFL, Sweden’s KTH, Germany’s Bonn University, England’s University of Birmingham, Intel, Google, Google DeepMind, Netflix, eBay  and Islamic Republic of Iran’s Sharif University of Technology, University of Tehran, Amirkabir University of Technology and Institute for Research in Fundamental Sciences (IPM).
-                            <br>
-                            Our talks are going to be governed around E-Commerce, Deep Classification Networks, Semantic Modelling, Video Understanding, Compressed DNNs, Machine Translation, Generative Adversarial Networks, Galaxy Simulation, Cognitive Science, Computer Vision, Machine Vision, Optimization, Deep Systems,  Deep CNNs, Deep Networks, Supervised Action and Learning Models.
+                            {{staticParts[0].about}}
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="committeeSection">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-md-12">
+                        <h1 class="text-center font-weight-bold text-white">Scientific Committee</h1>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-lg" :key="scientificCommittee.indexOf(member)"
+                         v-for="member in scientificCommittee">
+                        <CommitteMemberBlock :member="member"></CommitteMemberBlock>
                     </div>
                 </div>
             </div>
@@ -33,26 +47,57 @@
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-md-12">
-                        <h1 class="text-center font-weight-bold text-white">Speakers</h1>
+                        <h1 class="text-center font-weight-bold text-white">Invited Speakers</h1>
                     </div>
                 </div>
-                <div class="row pt-3" v-if="dataLoading">
-                    <h2 class="text-center">Loading...</h2>
-                </div>
-                <div class="row pt-3" v-else>
+                <div class="row pt-3">
                     <div class="col-lg-3" :key="speaker.id" v-for="speaker in speakers">
                         <SpeakerBlock :speaker="speaker"></SpeakerBlock>
                     </div>
                 </div>
 
-
                 <div class="row justify-content-center">
                     <div class="col-md-6 justify-content-center">
                         <div class="row">
                             <div class="col-md-6 mx-auto">
-                                <a href="http://skillcenter.aut.ac.ir/events/aaiss2019-summer98com" target="_blank" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                                <a :href="staticParts[0].register_link" target="_blank"
+                                   class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="scheduleSection">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-md-12">
+                        <h1 class="text-center font-weight-bold text-white">Schedule</h1>
+                        <p class="text-center">comming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="organizerSection">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-md-12">
+                        <h1 class="text-center font-weight-bold text-white">Organizer</h1>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-lg-6 text-white">
+
+                        <h5 class="organizerName">Students Scientific Chapter of CEIT - AUT</h5>
+                        <h6 class="organizerAddress mt-5">Address : Hafez St, Amirkabir University of Technology</h6>
+                        <h6 class="organizerSocial">Telegram : <a href="http://t.me/ceit_ssc">@ceit_ssc</a></h6>
+                        <h6 class="organizerEmail">Email : <a
+                                href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a></h6>
+                    </div>
+                    <div class="col-lg-6">
+                        <iframe class="ceitMapFrame"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1279.3005790001373!2d51.407153856288474!3d35.70374007930654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb68840e07e8e513!2sComputer+Engineering+%26+IT+Department!5e0!3m2!1sen!2snl!4v1563052060736!5m2!1sen!2snl"
+                                frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -63,46 +108,35 @@
 
 <script>
     // @ is an alias to /src
-    import axios from 'axios'
     import SpeakerBlock from '../components/SpeakerBlock'
+    import CommitteMemberBlock from '../components/CommitteeMemberBlock'
 
     export default {
         name: 'Home',
         data: function () {
-            return {
-                dataLoading: true,
-            }
+            return {}
         },
         computed: {
             speakers: function () {
                 return this.$store.getters.getSpeakers;
+            },
+            staticParts: function () {
+                return this.$store.getters.getStaticParts;
+            },
+            scientificCommittee: function () {
+                return this.$store.getters.getScientificCommittee;
             }
         },
         components: {
-            SpeakerBlock,
+            SpeakerBlock, CommitteMemberBlock
         },
-        methods: {
-            getSpeakers: function () {
-                this.dataLoading = true;
-                axios({
-                    url: this.$store.getters.getApi + '/speakers/',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    method: 'GET',
-                }).then((response) => {
-                    this.$store.commit('updateSpeakers', response.data);
-                    this.dataLoading = false;
-                }).catch((error) => {
-                    this.dataLoading = false;
-                })
-            },
-        },
+        methods: {},
         created() {
-            this.getSpeakers();
+            let staticPartsPromise = this.$store.dispatch('getStaticParts');
+            let scientificCommiteePromise = this.$store.dispatch('getScientificCommittee');
+            let speakersPromise = this.$store.dispatch('getSpeakers');
         },
         mounted() {
-            // this.initParticles();
             scrollTo(0, 0);
         }
     }
@@ -134,7 +168,7 @@
         cursor: default;
     }
 
-    .noSelect{
+    .noSelect {
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
         -khtml-user-select: none; /* Konqueror HTML */
@@ -180,6 +214,35 @@
         min-height: 100vh;
     }
 
+    #committeeSection {
+        background-color: #B7867E;
+        min-height: 100vh;
+    }
+
+    #scheduleSection {
+        background-color: #B7867E;
+        min-height: 100vh;
+    }
+
+    #organizerSection {
+        background-color: #B7867E;
+        min-height: 100vh;
+    }
+
+    .organizerEmail {
+        margin-bottom: 10px;
+    }
+
+    .organizerSocial a, .organizerEmail a {
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .organizerSocial a:hover, .organizerEmail a:hover {
+        color: #c6c4b6;
+    }
+
     .regBtn {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -194,6 +257,11 @@
 
     .titleCol h1 {
         font-size: 4rem;
+    }
+
+    .ceitMapFrame {
+        width: 100%;
+        min-height: 300px;
     }
 
     @media only screen and (min-width: 416px) and (max-width: 767.98px) {
