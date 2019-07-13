@@ -110,7 +110,7 @@
                                     <td>09:15 – 10:15</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3" class="text-center font-weight-bold">break</td>
+                                    <td colspan="3" class="text-center font-weight-bold">Break</td>
                                     <td>10:15 – 10:30</td>
                                 </tr>
                                 <tr>
@@ -296,11 +296,11 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-md-6 justify-content-center">
+                    <div class="col-md-12 justify-content-center">
                         <div class="row">
-                            <div class="col-md-10 mx-auto">
+                            <div class="col-md-12 mx-auto">
                                 <a :href="staticParts[0].register_link" target="_blank"
-                                   class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                                   class="btn btn-primary btn-lg btn-block float-left regBtn">Pre-Registration</a>
                             </div>
                         </div>
                     </div>
@@ -319,8 +319,10 @@
 
                         <h5 class="organizerName">Students Scientific Chapter of Computer Engineering and Information
                             Technology <br> Amirkabir University of Technology</h5>
-                        <h6 class="organizerAddress mt-5">Website : <a href="http://www.ceit-ssc.ir" target="_blank">www.ceit-ssc.ir</a></h6>
-                        <h6 class="organizerEmail">Email : <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a></h6>
+                        <h6 class="organizerAddress mt-5">Website : <a href="http://www.ceit-ssc.ir" target="_blank">www.ceit-ssc.ir</a>
+                        </h6>
+                        <h6 class="organizerEmail">Email : <a
+                                href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a></h6>
                         <div class="row pt-3">
                             <div class="col-md-12">
                                 <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid"
@@ -487,15 +489,20 @@
     }
 
     .regBtn {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: #C6C2C4;
+        background-color: white;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        color: #C6C2C4;
         border: none;
+        font-size: 2rem;
     }
 
     .regBtn:hover {
-        background-color: white;
-        color: #C6C2C4;
+        color:white;
+        background-color: #C6C2C4;
+        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
 
     .titleCol h1 {

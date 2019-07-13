@@ -6,7 +6,7 @@
                 <div class="col-md-3">
                     <SpeakerBlock :speaker="speaker"></SpeakerBlock>
                     <a :href="this.$store.getters.getStaticParts[0].register_link" target="_blank"
-                       class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                       class="btn btn-primary btn-lg btn-block float-left regBtn">Pre-Registration</a>
                 </div>
                 <div class="col-md-9 infoBlock">
                     <h1 class="display-5">
