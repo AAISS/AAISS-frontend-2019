@@ -1,5 +1,5 @@
 <template>
-    <div class="speakerBlock">
+    <router-link :to="'/speakers/' + speaker.id" class="speakerBlock d-block">
         <div class="text-center imgWrapper">
             <img :src="speaker.image_path" alt="img" class="rounded-circle img-fluid" draggable="false">
         </div>
@@ -9,7 +9,7 @@
             </router-link>
             <h6>{{speaker.position}}</h6>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -26,6 +26,7 @@
 
 <style scoped>
     .speakerBlock {
+        transition: all 0.1s ease-in-out;
         border-radius: 15px;
         background-color: #ffffff;
         min-height: 100px;
@@ -33,6 +34,13 @@
         -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
+
+    .speakerBlock:hover {
+        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
     }
 
     .imgWrapper img {

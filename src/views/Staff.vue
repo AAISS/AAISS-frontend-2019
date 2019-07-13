@@ -48,8 +48,8 @@
                 },
                 method: 'GET',
             }).then((response) => {
-                window.console.log(response.data.results);
-                this.$store.commit('updateStaffList', response.data.results);
+                window.console.log(response.data);
+                this.$store.commit('updateStaffList', response.data);
                 this.dataLoading = false;
                 // this.speakers = response.data.results;
             }).catch((error) => {
@@ -72,5 +72,6 @@
         background: -webkit-radial-gradient(center, ellipse cover, #e4e3df 0%, #c6c4b6 100%);
         background: radial-gradient(ellipse at center, #e4e3df 0%, #c6c4b6 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4e3df', endColorstr='#c6c4b6', GradientType=1);
+        padding-bottom: 20px;
     }
 </style>

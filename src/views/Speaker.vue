@@ -5,7 +5,7 @@
             <div class="row mt-5">
                 <div class="col-md-3">
                     <SpeakerBlock :speaker="speaker"></SpeakerBlock>
-                    <a href="#" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                    <a href="http://skillcenter.aut.ac.ir/events/aaiss2019-summer98com" target="_blank" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
                 </div>
                 <div class="col-md-9 infoBlock">
                     <h1 class="display-5">

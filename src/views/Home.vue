@@ -21,44 +21,9 @@
                     <div class="col-md-12">
                         <h2 class="font-weight-bold">About</h2>
                         <p class="text-justify aboutText">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet libero nibh. Ut
-                            eget
-                            condimentum orci. Morbi convallis, quam a pretium tincidunt, metus nunc aliquam magna, sed
-                            consequat
-                            nisl dolor et ex. Vivamus malesuada enim ac consequat bibendum. In ultricies turpis ut nunc
-                            rhoncus,
-                            sit amet consectetur metus porta. Cras malesuada posuere eleifend. Ut ac ipsum massa. Ut ac
-                            fringilla odio. Donec semper velit non magna consectetur convallis. Morbi vitae fermentum
-                            urna.
-                            Vivamus quis urna justo. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                            Pellentesque
-                            a neque est.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet
-                            libero
-                            nibh.
-                            Ut eget
-                            condimentum orci. Morbi convallis, quam a pretium tincidunt, metus nunc aliquam magna, sed
-                            consequat
-                            nisl dolor et ex. Vivamus malesuada enim ac consequat bibendum. In ultricies turpis ut nunc
-                            rhoncus,
-                            sit amet consectetur metus porta. Cras malesuada posuere eleifend. Ut ac ipsum massa. Ut ac
-                            fringilla odio. Donec semper velit non magna consectetur convallis. Morbi vitae fermentum
-                            urna.
-                            Vivamus quis urna justo. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                            Pellentesque
-                            a neque est.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet
-                            libero
-                            nibh.
-                            Ut eget
-                            condimentum orci. Morbi convallis, quam a pretium tincidunt, metus nunc aliquam magna, sed
-                            consequat
-                            nisl dolor et ex. Vivamus malesuada enim ac consequat bibendum. In ultricies turpis ut nunc
-                            rhoncus,
-                            sit amet consectetur metus porta. Cras malesuada posuere eleifend. Ut ac ipsum massa. Ut ac
-                            fringilla odio. Donec semper velit non magna consectetur convallis. Morbi vitae fermentum
-                            urna.
-                            Vivamus quis urna justo. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                            Pellentesque
-                            a neque est.
+                            Given the accelerated pace of Artificial Intelligence and Data Science, Computer Engineering department’s Students’ Scientific Association of Amirkabir University of Technology (CEIT SSC) is organizing its first AAISS (Amirkabir Artificial Intelligence Summer Summit) which consists of a series of talks hosting speakers of USA’s MIT, Stanford, UCLA and UCF, Switzerland’s ETH and EPFL, Sweden’s KTH, Germany’s Bonn University, England’s University of Birmingham, Intel, Google, Google DeepMind, Netflix, eBay  and Islamic Republic of Iran’s Sharif University of Technology, University of Tehran, Amirkabir University of Technology and Institute for Research in Fundamental Sciences (IPM).
+                            <br>
+                            Our talks are going to be governed around E-Commerce, Deep Classification Networks, Semantic Modelling, Video Understanding, Compressed DNNs, Machine Translation, Generative Adversarial Networks, Galaxy Simulation, Cognitive Science, Computer Vision, Machine Vision, Optimization, Deep Systems,  Deep CNNs, Deep Networks, Supervised Action and Learning Models.
                         </p>
                     </div>
                 </div>
@@ -85,7 +50,7 @@
                     <div class="col-md-6 justify-content-center">
                         <div class="row">
                             <div class="col-md-6 mx-auto">
-                                <a href="#" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                                <a href="http://skillcenter.aut.ac.ir/events/aaiss2019-summer98com" target="_blank" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
                             </div>
                         </div>
                     </div>
@@ -126,8 +91,8 @@
                     },
                     method: 'GET',
                 }).then((response) => {
-                    window.console.log(response.data.results);
-                    this.$store.commit('updateSpeakers', response.data.results);
+                    window.console.log(response.data);
+                    this.$store.commit('updateSpeakers', response.data);
                     this.dataLoading = false;
                 }).catch((error) => {
                     this.dataLoading = false;
