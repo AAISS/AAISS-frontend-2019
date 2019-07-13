@@ -91,12 +91,10 @@
                     },
                     method: 'GET',
                 }).then((response) => {
-                    window.console.log(response.data);
                     this.$store.commit('updateSpeakers', response.data);
                     this.dataLoading = false;
                 }).catch((error) => {
                     this.dataLoading = false;
-                    window.console.log(error);
                 })
             },
         },

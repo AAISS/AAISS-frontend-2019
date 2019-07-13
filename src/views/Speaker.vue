@@ -5,7 +5,8 @@
             <div class="row mt-5">
                 <div class="col-md-3">
                     <SpeakerBlock :speaker="speaker"></SpeakerBlock>
-                    <a href="http://skillcenter.aut.ac.ir/events/aaiss2019-summer98com" target="_blank" class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                    <a href="http://skillcenter.aut.ac.ir/events/aaiss2019-summer98com" target="_blank"
+                       class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
                 </div>
                 <div class="col-md-9 infoBlock">
                     <h1 class="display-5">
@@ -45,32 +46,34 @@
 
 <script>
     import SpeakerBlock from '../components/SpeakerBlock'
+    import axios from 'axios'
 
     export default {
         name: "Speaker",
         data: function () {
-            return {}
-        }, computed: {
-            speaker: function () {
-                for (let i = 0; i < this.$store.getters.getSpeakers.length; i++) {
-                    if (this.$store.getters.getSpeakers[i].id == this.$route.params.id) {
-                        return this.$store.getters.getSpeakers[i];
-                    }
-                }
-                return null;
+            return {
+                speaker: {},
             }
-        },
+        }, computed: {},
         components: {
             SpeakerBlock
         },
         methods: {},
         created() {
-
+            window.console.log(this.$route.params.id);
+            axios({
+                url: this.$store.getters.getApi + '/speakers/' + this.$route.params.id,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                method: 'GET',
+            }).then((response) => {
+                this.speaker = response.data;
+            }).catch((error) => {
+                this.$router.push('/');
+            })
         },
         mounted() {
-            if (this.speaker == null) {
-                this.$router.push('/');
-            }
             scrollTo(0, 0);
         }
 
