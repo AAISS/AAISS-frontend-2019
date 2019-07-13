@@ -1,12 +1,19 @@
 <template>
     <div>
         <section id="headerSection">
-            <!-- particles.js container -->
             <div class="container position-absolute titleContainer">
                 <div class=" row pt-5">
-                    <!--<div class="col-md-2"></div>-->
                     <div class="col-md-12 titleCol">
-                        <h1 class="noSelect">Amirkabir Artificial Intelligence Summer Summit</h1>
+                        <h1 class="noSelect text-center">
+                            Amirkabir
+                            Artificial Intelligence
+                            Summer Summit
+                        </h1>
+                    </div>
+                    <div class="col-md-12 subTitleCol">
+                        <h4 class="text-center">
+                            Advanced topics in Machine Learning, Deep Learning and Neurosciences
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -20,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="font-weight-bold">About the Event</h2>
+                        <h2 class="font-weight-bold text-center">About the Event</h2>
                         <p class="text-justify aboutText">
                             {{staticParts[0].about}}
                         </p>
@@ -55,17 +62,6 @@
                         <SpeakerBlock :speaker="speaker"></SpeakerBlock>
                     </div>
                 </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-md-6 justify-content-center">
-                        <div class="row">
-                            <div class="col-md-6 mx-auto">
-                                <a :href="staticParts[0].register_link" target="_blank"
-                                   class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <section id="scheduleSection">
@@ -73,7 +69,240 @@
                 <div class="row pt-5">
                     <div class="col-md-12">
                         <h1 class="text-center font-weight-bold text-white">Schedule</h1>
-                        <p class="text-center">comming soon...</p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Index</th>
+                                    <th scope="col">Title(level)</th>
+                                    <th scope="col">Speaker(affiliations) / Type</th>
+                                    <th scope="col">Timing</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td colspan="4" class="firstSpecRow text-center font-weight-bold">1st Day (Tuesday -
+                                        Jul, 16 / Mor, 1)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>0</th>
+                                    <th>Opening</th>
+                                    <th>Farrokh Karimi (Chairman)</th>
+                                    <th>07:45 – 08:15</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Learning to Rank for E-commerce (Intermediate)</td>
+                                    <td>Ehsan Ebrahimzadeh )Research Scientist at eBay, PhD in ECE from UCLA) / Skype
+                                    </td>
+                                    <td>08:15 – 09:15</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>A Closed-Form Learned Pooling for Deep Classification Networks (Intermediate)
+                                    </td>
+                                    <td>Hossein Mohabi (Research Scientist at Google, PhD in CS from MIT) / Google
+                                        Hangout
+                                    </td>
+                                    <td>09:15 – 10:15</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">break</td>
+                                    <td>10:15 – 10:30</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Describing Images by Semantic Modeling using Attributes and Tags
+                                        (Intermediate)
+                                    </td>
+                                    <td>Mahdi M. Kalayeh (Senior Research Scientist at Netflix, PhD in CS from UCF) /
+                                        Skype
+                                    </td>
+                                    <td>10:30 – 11:30</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Holistic Video Understanding (Intermediate)</td>
+                                    <td>Mohsen Fayyaz (PhD Candidate in CS at University of Bonn, Germany) / Skype</td>
+                                    <td>11:30 – 12:30</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">Launch and Prayers</td>
+                                    <td>12:30 – 13:30</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Compressed DNNs and their fault resiliency (Intermediate)</td>
+                                    <td>Majid Sabbagh (Intel, PhD Candidate in CS at NEU : Northeastern University) /
+                                        Skype
+                                    </td>
+                                    <td>13:30 – 14:30</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Corpus based Machine Translation (Intermediate)</td>
+                                    <td>Heshaam Faili (Associate Professor at UT, Research Fellow at IPM) / In person
+                                    </td>
+                                    <td>14:30 – 15:30</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">Break</td>
+                                    <td>15:30 – 15:45</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Generative Adversarial Networks: Image and Text Generation (Intermediate)</td>
+                                    <td>Mahdieh Soleymani (Assistant Professor at SUT) / In person</td>
+                                    <td>15:45 – 16:45</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Building a descriptive graph for a galaxy simulation (Intermediate)</td>
+                                    <td>Abolfazl Taghribi (PhD Candidate in ECE at University of Birmingham, England) /
+                                        Skype
+                                    </td>
+                                    <td>16:45 – 17:45</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-center font-weight-bold">2nd Day (Wednesday - Jul, 17 /
+                                        Mor, 2)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>From Genes To Cognition (Intermediate)</td>
+                                    <td>Sajjad Torabian (PhD Candidate in CS at UC Irvine – Stanford) / In person</td>
+                                    <td>08:15 – 09:15</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Neuroscience-inspired Computer Vision (Intermediate)</td>
+                                    <td>Mohammad-Reza Abolghasemi-Dehaqani (Assistant Professor at UT, Research Fellow
+                                        at IPM) / In person
+                                    </td>
+                                    <td>09:15 – 10:15</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">Break</td>
+                                    <td>10:15 – 10:30</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Machine Vision as a way of Overcoming Human Visual Disorders (Intermediate)</td>
+                                    <td>Farrokh Karimi (Reseach Fellow at IPM, Research Assistant at SUT, AUT) / In
+                                        person
+                                    </td>
+                                    <td>10:30 – 11:30</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Consistent Online Optimization (Intermediate)</td>
+                                    <td>Mohammad Reza Karimi (PhD Candidate in CS at ETH) / Skype</td>
+                                    <td>11:30 – 12:30</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">Launch and Prayers</td>
+                                    <td>12:30 – 13:30</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>The Application of Fuzzy Deep Systems in Medical Data Analysis (Intermediate)
+                                    </td>
+                                    <td>Raheleh Davoodi (PhD Candidate in BE at AUT) / In person</td>
+                                    <td>13:30 – 14:30</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Semantic Segmentation of Images using Deep Convolutional Neural Networks
+                                        (Advanced)
+                                    </td>
+                                    <td>Fahimeh Fooladgar (PhD Candidate in CE at SUT) / In person</td>
+                                    <td>14:30 – 15:30</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">Break</td>
+                                    <td>15:30 – 15:45</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">15</td>
+                                    <td>Weakly Supervised Action Segmentation Using Mutual Consistency (Advanced)</td>
+                                    <td>Mohsen Fayyaz (PhD Candidate in CS at University of Bonn, Germany) / Skype</td>
+                                    <td rowspan="2">15:45 – 16:45 <br>One or two</td>
+                                </tr>
+                                <tr>
+                                    <td>Training Faster by Separating Modes of Variation in Batch-normalized Models
+                                        (Advanced)
+                                    </td>
+                                    <td>Mahdi M. Kalayeh (Research Scientist at Netflix, PhD in CS from UCF) / Skype
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>Uncertainty estimation with Deep Networks (Advanced)</td>
+                                    <td>Hossein Azizpour (Assistant Professor at KTH) / Skype</td>
+                                    <td>16:45 – 17:45</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-center font-weight-bold">3rd Day (Thursday - Jul, 18 /
+                                        Mor, 3)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>A geometric perspective on the robustness of deep networks (Advanced)</td>
+                                    <td>Seyed-Mohsen Moosavi-Dezfooli (PhD Candidate in CS at EPFL) / In person</td>
+                                    <td>08:15 – 09:15</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>Representation Learning Without Labels (Advanced)</td>
+                                    <td>Ali Eslami (Research Scientist at Google DeepMind, PhD from University of
+                                        Edinburgh) / Skype
+                                    </td>
+                                    <td>09:15 – 10:15</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center font-weight-bold">Break</td>
+                                    <td>10:15 – 10:30</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>The spatiotemporal neural dynamics of perceptual processes in the brain and deep
+                                        network models (Advanced)
+                                    </td>
+                                    <td>Yalda Mohsenzadeh (Assistant Professor at Western University, Postdoctoral
+                                        Associate at MIT) / Skype
+                                    </td>
+                                    <td>10:30 – 11:30</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>Manifold optimization in machine learning (Advanced)</td>
+                                    <td>Reshad Hosseini (Assistant Professor at UT, Research Fellow at IPM) / Skype</td>
+                                    <td>11:30 – 12:30</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <th>Closing</th>
+                                    <td></td>
+                                    <td>12:30 - 13:00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 justify-content-center">
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <a :href="staticParts[0].register_link" target="_blank"
+                                   class="btn btn-primary btn-lg btn-block float-left regBtn">Register</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,11 +317,16 @@
                 <div class="row pt-5">
                     <div class="col-lg-6 text-white">
 
-                        <h5 class="organizerName">Students Scientific Chapter of CEIT - AUT</h5>
-                        <h6 class="organizerAddress mt-5">Address : Hafez St, Amirkabir University of Technology</h6>
-                        <h6 class="organizerSocial">Telegram : <a href="http://t.me/ceit_ssc">@ceit_ssc</a></h6>
-                        <h6 class="organizerEmail">Email : <a
-                                href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a></h6>
+                        <h5 class="organizerName">Students Scientific Chapter of Computer Engineering and Information
+                            Technology <br> Amirkabir University of Technology</h5>
+                        <h6 class="organizerAddress mt-5">Website : <a href="http://www.ceit-ssc.ir" target="_blank">www.ceit-ssc.ir</a></h6>
+                        <h6 class="organizerEmail">Email : <a href="mailto:ceit.ssc94@gmail.com">ceit.ssc94@gmail.com</a></h6>
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid"
+                                     draggable="false">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <iframe class="ceitMapFrame"
@@ -154,10 +388,19 @@
     }
 
     .titleContainer {
-        top: 22%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
+    }
+
+
+    .titleCol {
+        margin-bottom: 50px;
+    }
+
+    .subTitleCol h4 {
+        color: #55585d;
     }
 
     .titleCol h1 {
@@ -178,10 +421,10 @@
     }
 
     .brainImage {
-        width: 620px;
+        width: 700px;
         position: absolute;
         left: 50%;
-        top: 66%;
+        top: 50%;
         transform: translate(-50%, -50%);
 
     }
@@ -233,13 +476,13 @@
         margin-bottom: 10px;
     }
 
-    .organizerSocial a, .organizerEmail a {
+    .organizerAddress a, .organizerEmail a {
         text-decoration: none;
         color: white;
         transition: all 0.3s ease-in-out;
     }
 
-    .organizerSocial a:hover, .organizerEmail a:hover {
+    .organizerAddress a:hover, .organizerEmail a:hover {
         color: #c6c4b6;
     }
 
@@ -261,18 +504,73 @@
 
     .ceitMapFrame {
         width: 100%;
-        min-height: 300px;
+        min-height: 350px;
+        border-radius: 15px;
+        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    }
+
+    td[colspan="3"] {
+        font-size: 16px;
+        color: black;
+    }
+
+    td[colspan="4"] {
+        font-size: 16.5px;
+        color: #10a3f0;
+    }
+
+    .table-responsive {
+        background-color: white;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 15px;
+        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
 
     @media only screen and (min-width: 416px) and (max-width: 767.98px) {
+
+        .titleContainer {
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .titleCol {
+            margin-bottom: 25px;
+        }
+
         .titleCol h1 {
-            font-size: 3rem;
+            font-size: 2.7rem;
+            line-height: 45px;
         }
     }
 
     @media only screen and (min-width: 0) and (max-width: 415px) {
+        .titleContainer {
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .titleCol {
+            margin-bottom: 10px;
+        }
+
         .titleCol h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            line-height: 30px;
+        }
+
+        .subTitleCol h4 {
+            color: #55585d;
+            font-size: 1rem;
         }
     }
 </style>
