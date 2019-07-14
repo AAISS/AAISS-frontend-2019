@@ -227,22 +227,15 @@
                                     <td>15:30 – 15:45</td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="2">15</td>
-                                    <td>Weakly Supervised Action Segmentation Using Mutual Consistency (Advanced)</td>
-                                    <td>Mohsen Fayyaz (PhD Candidate in CS at University of Bonn, Germany) / Skype</td>
-                                    <td rowspan="2">15:45 – 16:45 <br>One or two</td>
-                                </tr>
-                                <tr>
-                                    <td>Training Faster by Separating Modes of Variation in Batch-normalized Models
-                                        (Advanced)
-                                    </td>
-                                    <td>Mahdi M. Kalayeh (Research Scientist at Netflix, PhD in CS from UCF) / Skype
-                                    </td>
+                                    <td>15</td>
+                                    <td>Uncertainty estimation with Deep Networks (Advanced)</td>
+                                    <td>Hossein Azizpour (Assistant Professor at KTH) / Skype</td>
+                                    <td>15:45 – 16:45</td>
                                 </tr>
                                 <tr>
                                     <td>16</td>
-                                    <td>Uncertainty estimation with Deep Networks (Advanced)</td>
-                                    <td>Hossein Azizpour (Assistant Professor at KTH) / Skype</td>
+                                    <td>Attacks & Defenses for Deep Neural Networks (Advanced)</td>
+                                    <td>Mohammad Khalooei (PhD Candidtate in CE at AUT) / In person</td>
                                     <td>16:45 – 17:45</td>
                                 </tr>
                                 <tr>
