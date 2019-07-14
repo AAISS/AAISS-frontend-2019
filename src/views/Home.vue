@@ -6,13 +6,15 @@
                     <div class="col-md-12 titleCol">
                         <h1 class="noSelect text-center">
                             Amirkabir
+                            <br>
                             Artificial Intelligence
+                            <br>
                             Summer Summit
                         </h1>
                     </div>
                     <div class="col-md-12 subTitleCol">
                         <h4 class="text-center">
-                            Advanced topics in Machine Learning, Deep Learning and Neurosciences
+                            Advanced topics in Machine Learning, Deep Learning, and Neurosciences
                         </h4>
                     </div>
                 </div>
@@ -25,12 +27,16 @@
         </section>
         <section id="aboutSection">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="font-weight-bold text-center">About the Event</h2>
-                        <p class="text-justify aboutText">
-                            {{staticParts[0].about}}
-                        </p>
+                <div class="row justify-content-center">
+                    <div class="col-md-12 justify-content-center">
+                        <div class="row">
+                            <div class="col-md-12 mx-auto">
+                                <h2 class="font-weight-bold text-center">About the Event</h2>
+                                <p class="text-justify aboutText">
+                                    {{staticParts[0].about}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,8 +82,8 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Index</th>
-                                    <th scope="col">Title(level)</th>
-                                    <th scope="col">Speaker(affiliations) / Type</th>
+                                    <th scope="col">Title (level)</th>
+                                    <th scope="col">Lecturer / Type</th>
                                     <th scope="col">Timing</th>
                                 </tr>
                                 </thead>
@@ -88,15 +94,21 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>0</th>
+                                    <th class="text-center">0</th>
+                                    <th>Registration</th>
+                                    <th></th>
+                                    <th>07:30 – 07:45</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center">0</th>
                                     <th>Opening</th>
-                                    <th>Farrokh Karimi (Chairman)</th>
+                                    <th></th>
                                     <th>07:45 – 08:15</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>Learning to Rank for E-commerce (Intermediate)</td>
-                                    <td>Ehsan Ebrahimzadeh )Research Scientist at eBay, PhD in ECE from UCLA) / Skype
+                                    <td>Ehsan Ebrahimzadeh / Skype
                                     </td>
                                     <td>08:15 – 09:15</td>
                                 </tr>
@@ -104,7 +116,7 @@
                                     <td>2</td>
                                     <td>A Closed-Form Learned Pooling for Deep Classification Networks (Intermediate)
                                     </td>
-                                    <td>Hossein Mohabi (Research Scientist at Google, PhD in CS from MIT) / Google
+                                    <td>Hossein Mobahi / Google
                                         Hangout
                                     </td>
                                     <td>09:15 – 10:15</td>
@@ -118,7 +130,7 @@
                                     <td>Describing Images by Semantic Modeling using Attributes and Tags
                                         (Intermediate)
                                     </td>
-                                    <td>Mahdi M. Kalayeh (Senior Research Scientist at Netflix, PhD in CS from UCF) /
+                                    <td>Mahdi M. Kalayeh /
                                         Skype
                                     </td>
                                     <td>10:30 – 11:30</td>
@@ -126,7 +138,7 @@
                                 <tr>
                                     <td>4</td>
                                     <td>Holistic Video Understanding (Intermediate)</td>
-                                    <td>Mohsen Fayyaz (PhD Candidate in CS at University of Bonn, Germany) / Skype</td>
+                                    <td>Mohsen Fayyaz / Skype</td>
                                     <td>11:30 – 12:30</td>
                                 </tr>
                                 <tr>
@@ -136,7 +148,7 @@
                                 <tr>
                                     <td>5</td>
                                     <td>Compressed DNNs and their fault resiliency (Intermediate)</td>
-                                    <td>Majid Sabbagh (Intel, PhD Candidate in CS at NEU : Northeastern University) /
+                                    <td>Majid Sabbagh /
                                         Skype
                                     </td>
                                     <td>13:30 – 14:30</td>
@@ -144,7 +156,7 @@
                                 <tr>
                                     <td>6</td>
                                     <td>Corpus based Machine Translation (Intermediate)</td>
-                                    <td>Heshaam Faili (Associate Professor at UT, Research Fellow at IPM) / In person
+                                    <td>Heshaam Faili / In person
                                     </td>
                                     <td>14:30 – 15:30</td>
                                 </tr>
@@ -155,13 +167,13 @@
                                 <tr>
                                     <td>7</td>
                                     <td>Generative Adversarial Networks: Image and Text Generation (Intermediate)</td>
-                                    <td>Mahdieh Soleymani (Assistant Professor at SUT) / In person</td>
+                                    <td>Mahdieh Soleymani / In person</td>
                                     <td>15:45 – 16:45</td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
                                     <td>Building a descriptive graph for a galaxy simulation (Intermediate)</td>
-                                    <td>Abolfazl Taghribi (PhD Candidate in ECE at University of Birmingham, England) /
+                                    <td>Abolfazl Taghribi /
                                         Skype
                                     </td>
                                     <td>16:45 – 17:45</td>
@@ -174,14 +186,13 @@
                                 <tr>
                                     <td>9</td>
                                     <td>From Genes To Cognition (Intermediate)</td>
-                                    <td>Sajjad Torabian (PhD Candidate in CS at UC Irvine – Stanford) / In person</td>
+                                    <td>Sajjad Torabian / In person</td>
                                     <td>08:15 – 09:15</td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>Neuroscience-inspired Computer Vision (Intermediate)</td>
-                                    <td>Mohammad-Reza Abolghasemi-Dehaqani (Assistant Professor at UT, Research Fellow
-                                        at IPM) / In person
+                                    <td>Mohammad-Reza Abolghasemi-Dehaqani / In person
                                     </td>
                                     <td>09:15 – 10:15</td>
                                 </tr>
@@ -192,7 +203,7 @@
                                 <tr>
                                     <td>11</td>
                                     <td>Machine Vision as a way of Overcoming Human Visual Disorders (Intermediate)</td>
-                                    <td>Farrokh Karimi (Reseach Fellow at IPM, Research Assistant at SUT, AUT) / In
+                                    <td>Farrokh Karimi / In
                                         person
                                     </td>
                                     <td>10:30 – 11:30</td>
@@ -200,7 +211,7 @@
                                 <tr>
                                     <td>12</td>
                                     <td>Consistent Online Optimization (Intermediate)</td>
-                                    <td>Mohammad Reza Karimi (PhD Candidate in CS at ETH) / Skype</td>
+                                    <td>Mohammad Reza Karimi / Skype</td>
                                     <td>11:30 – 12:30</td>
                                 </tr>
                                 <tr>
@@ -211,7 +222,7 @@
                                     <td>13</td>
                                     <td>The Application of Fuzzy Deep Systems in Medical Data Analysis (Intermediate)
                                     </td>
-                                    <td>Raheleh Davoodi (PhD Candidate in BE at AUT) / In person</td>
+                                    <td>Raheleh Davoodi / In person</td>
                                     <td>13:30 – 14:30</td>
                                 </tr>
                                 <tr>
@@ -219,7 +230,7 @@
                                     <td>Semantic Segmentation of Images using Deep Convolutional Neural Networks
                                         (Advanced)
                                     </td>
-                                    <td>Fahimeh Fooladgar (PhD Candidate in CE at SUT) / In person</td>
+                                    <td>Fahimeh Fooladgar / In person</td>
                                     <td>14:30 – 15:30</td>
                                 </tr>
                                 <tr>
@@ -229,13 +240,13 @@
                                 <tr>
                                     <td>15</td>
                                     <td>Uncertainty estimation with Deep Networks (Advanced)</td>
-                                    <td>Hossein Azizpour (Assistant Professor at KTH) / Skype</td>
+                                    <td>Hossein Azizpour / Skype</td>
                                     <td>15:45 – 16:45</td>
                                 </tr>
                                 <tr>
                                     <td>16</td>
                                     <td>Attacks & Defenses for Deep Neural Networks (Advanced)</td>
-                                    <td>Mohammad Khalooei (PhD Candidtate in CE at AUT) / In person</td>
+                                    <td>Mohammad Khalooei / In person</td>
                                     <td>16:45 – 17:45</td>
                                 </tr>
                                 <tr>
@@ -246,14 +257,13 @@
                                 <tr>
                                     <td>17</td>
                                     <td>A geometric perspective on the robustness of deep networks (Advanced)</td>
-                                    <td>Seyed-Mohsen Moosavi-Dezfooli (PhD Candidate in CS at EPFL) / In person</td>
+                                    <td>Seyed-Mohsen Moosavi-Dezfooli / In person</td>
                                     <td>08:15 – 09:15</td>
                                 </tr>
                                 <tr>
                                     <td>18</td>
                                     <td>Representation Learning Without Labels (Advanced)</td>
-                                    <td>Ali Eslami (Research Scientist at Google DeepMind, PhD from University of
-                                        Edinburgh) / Skype
+                                    <td>Ali Eslami / Skype
                                     </td>
                                     <td>09:15 – 10:15</td>
                                 </tr>
@@ -266,19 +276,18 @@
                                     <td>The spatiotemporal neural dynamics of perceptual processes in the brain and deep
                                         network models (Advanced)
                                     </td>
-                                    <td>Yalda Mohsenzadeh (Assistant Professor at Western University, Postdoctoral
-                                        Associate at MIT) / Skype
+                                    <td>Yalda Mohsenzadeh / Skype
                                     </td>
                                     <td>10:30 – 11:30</td>
                                 </tr>
                                 <tr>
                                     <td>20</td>
                                     <td>Manifold optimization in machine learning (Advanced)</td>
-                                    <td>Reshad Hosseini (Assistant Professor at UT, Research Fellow at IPM) / Skype</td>
+                                    <td>Reshad Hosseini / Skype</td>
                                     <td>11:30 – 12:30</td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>-</td>
                                     <th>Closing</th>
                                     <td></td>
                                     <td>12:30 - 13:00</td>
@@ -317,8 +326,8 @@
                 <div class="row pt-5 pb-5">
                     <div class="col-lg-6 text-white">
 
-                        <h5 class="organizerName">Students Scientific Chapter of Computer Engineering and Information
-                            Technology <br> Amirkabir University of Technology</h5>
+                        <h5 class="organizerName">Student's Scientific Chapter of Computer Engineering and Information
+                            Technology Department <br> Amirkabir University of Technology(Tehran Polytechnic)</h5>
                         <h6 class="organizerAddress mt-5">Website : <a href="http://www.ceit-ssc.ir" target="_blank">www.ceit-ssc.ir</a>
                         </h6>
                         <h6 class="organizerEmail">Email : <a
@@ -402,7 +411,7 @@
     }
 
     .titleContainer {
-        top: 35%;
+        top: 42%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
@@ -537,6 +546,10 @@
         -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
+    }
+
+    td:first-child {
+        text-align: center;
     }
 
     td[colspan="3"] {
