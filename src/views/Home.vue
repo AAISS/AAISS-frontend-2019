@@ -459,9 +459,13 @@
         min-height: 100vh;
     }
 
+    #speakersSection h1 {
+        padding-top: 45px;
+    }
+
+
     #committeeSection {
         background-color: #B7867E;
-        min-height: 100vh;
     }
 
     #scheduleSection {
@@ -469,9 +473,13 @@
         min-height: 100vh;
     }
 
+    #scheduleSection h1 {
+        padding-top: 45px;
+        padding-bottom: 30px;
+    }
+
     #organizerSection {
         background-color: #B7867E;
-        min-height: 100vh;
     }
 
     .organizerEmail {
@@ -498,7 +506,7 @@
     }
 
     .regBtn:hover {
-        color:white;
+        color: white;
         background-color: #C6C2C4;
         -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);

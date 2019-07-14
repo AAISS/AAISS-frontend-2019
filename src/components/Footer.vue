@@ -5,9 +5,7 @@
                 <div class="col-md-4">
                     <img src="../assets/img/autLogo.png" alt="amirkabir logo" class="img-fluid" draggable="false">
                 </div>
-                <div class="col-md-4">
-                    <img src="../assets/img/ssc-logo-white-horizontal.png" alt="ssc logo" class="img-fluid" draggable="false">
-                </div>
+                <div class="col-md-4"></div>
                 <div class="col-md-4 text-right">
                     <img src="../assets/img/ceitLogo.png" alt="ceit logo" class="img-fluid" draggable="false">
                 </div>
