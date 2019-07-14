@@ -83,8 +83,8 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td colspan="4" class="firstSpecRow text-center font-weight-bold">1st Day (Tuesday -
-                                        Jul, 16 / Mor, 1)
+                                    <td colspan="4" class="firstSpecRow text-center font-weight-bold">
+                                        1st Day (Tuesday - 23rd of July / 1st of Mordad)
                                     </td>
                                 </tr>
                                 <tr>
@@ -130,7 +130,7 @@
                                     <td>11:30 – 12:30</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3" class="text-center font-weight-bold">Launch and Prayers</td>
+                                    <td colspan="3" class="text-center font-weight-bold">Lunch and Prayers</td>
                                     <td>12:30 – 13:30</td>
                                 </tr>
                                 <tr>
@@ -167,8 +167,8 @@
                                     <td>16:45 – 17:45</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4" class="text-center font-weight-bold">2nd Day (Wednesday - Jul, 17 /
-                                        Mor, 2)
+                                    <td colspan="4" class="text-center font-weight-bold">2nd Day (Wednesday - 24th of
+                                        July / 2nd of Mordad)
                                     </td>
                                 </tr>
                                 <tr>
@@ -204,7 +204,7 @@
                                     <td>11:30 – 12:30</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3" class="text-center font-weight-bold">Launch and Prayers</td>
+                                    <td colspan="3" class="text-center font-weight-bold">Lunch and Prayers</td>
                                     <td>12:30 – 13:30</td>
                                 </tr>
                                 <tr>
@@ -246,8 +246,8 @@
                                     <td>16:45 – 17:45</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4" class="text-center font-weight-bold">3rd Day (Thursday - Jul, 18 /
-                                        Mor, 3)
+                                    <td colspan="4" class="text-center font-weight-bold">3rd Day (Thursday - 25th of
+                                        July / 3rd of Mordad)
                                     </td>
                                 </tr>
                                 <tr>
@@ -299,8 +299,15 @@
                     <div class="col-md-12 justify-content-center">
                         <div class="row">
                             <div class="col-md-12 mx-auto">
-                                <a :href="staticParts[0].register_link" target="_blank"
-                                   class="btn btn-primary btn-lg btn-block float-left regBtn">Pre-Registration</a>
+                                <button @click.prevent="showRegisterSoonMessage()"
+                                        v-if="staticParts[0].register_link == '/'"
+                                        class="btn btn-primary btn-lg btn-block float-left regBtn">
+                                    <span v-bind:class="{'small' : smallerFontSize}">
+                                    {{registerValue}}
+                                    </span>
+                                </button>
+                                <a v-else :href="staticParts[0].register_link"
+                                   class="btn btn-primary btn-lg btn-block float-left regBtn" target="_blank">{{registerValue}}</a>
                             </div>
                         </div>
                     </div>
@@ -350,7 +357,10 @@
     export default {
         name: 'Home',
         data: function () {
-            return {}
+            return {
+                registerValue: 'Registration',
+                smallerFontSize: false,
+            }
         },
         computed: {
             speakers: function () {
@@ -366,7 +376,16 @@
         components: {
             SpeakerBlock, CommitteMemberBlock
         },
-        methods: {},
+        methods: {
+            showRegisterSoonMessage: function () {
+                this.registerValue = 'Registration will be available soon...';
+                this.smallerFontSize = true;
+                setTimeout(() => {
+                    this.registerValue = 'Registration';
+                    this.smallerFontSize = false;
+                }, 2500)
+            }
+        },
         created() {
             let staticPartsPromise = this.$store.dispatch('getStaticParts');
             let scientificCommiteePromise = this.$store.dispatch('getScientificCommittee');
@@ -549,6 +568,10 @@
 
     @media only screen and (min-width: 416px) and (max-width: 767.98px) {
 
+        .small {
+            font-size: 17px;
+        }
+
         .titleContainer {
             top: 42%;
             left: 50%;
@@ -586,6 +609,10 @@
         .subTitleCol h4 {
             color: #55585d;
             font-size: 1rem;
+        }
+
+        .small {
+            font-size: 17px;
         }
     }
 </style>

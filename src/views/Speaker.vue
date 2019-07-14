@@ -3,12 +3,20 @@
         <!--        <div id="particles-js" class="position-absolute"></div>-->
         <div class="container pt-5" v-if="speaker != null">
             <div class="row mt-5">
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <SpeakerBlock :speaker="speaker"></SpeakerBlock>
-                    <a :href="this.$store.getters.getStaticParts[0].register_link" target="_blank"
-                       class="btn btn-primary btn-lg btn-block float-left regBtn">Pre-Registration</a>
+                    <button @click.prevent="showRegisterSoonMessage()"
+                            v-if="staticParts[0].register_link == '/'"
+                            class="btn btn-primary btn-lg btn-block float-left regBtn"
+                            >
+                        <span v-bind:class="{'small' : smallerFontSize}">
+                            {{registerValue}}
+                        </span>
+                    </button>
+                    <a v-else :href="staticParts[0].register_link"
+                       class="btn btn-primary btn-lg btn-block float-left regBtn" target="_blank">{{registerValue}}</a>
                 </div>
-                <div class="col-md-9 infoBlock">
+                <div class="col-lg-9 infoBlock">
                     <h1 class="display-5">
                         {{speaker.talk_title}}
                     </h1>
@@ -53,12 +61,27 @@
         data: function () {
             return {
                 speaker: {},
+                registerValue: 'Registration',
+                smallerFontSize: false,
             }
-        }, computed: {},
+        }, computed: {
+            staticParts: function () {
+                return this.$store.getters.getStaticParts;
+            },
+        },
         components: {
             SpeakerBlock
         },
-        methods: {},
+        methods: {
+            showRegisterSoonMessage: function () {
+                this.registerValue = 'Registration will be available soon...';
+                this.smallerFontSize = true;
+                setTimeout(() => {
+                    this.registerValue = 'Registration';
+                    this.smallerFontSize = false;
+                }, 2500)
+            }
+        },
         created() {
             window.console.log(this.$route.params.id);
             axios({
@@ -123,7 +146,9 @@
         background-color: white;
         color: #C6C2C4;
     }
-
+    .small {
+        font-size: 12px;
+    }
     @media (min-width: 0) and (max-width: 991.98px) {
         #speakersSection {
             height: auto;
