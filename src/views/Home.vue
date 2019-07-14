@@ -314,7 +314,7 @@
                         <h1 class="text-center font-weight-bold text-white">Organizer</h1>
                     </div>
                 </div>
-                <div class="row pt-5">
+                <div class="row pt-5 pb-5">
                     <div class="col-lg-6 text-white">
 
                         <h5 class="organizerName">Students Scientific Chapter of Computer Engineering and Information
