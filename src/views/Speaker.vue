@@ -8,7 +8,7 @@
                     <button @click.prevent="showRegisterSoonMessage()"
                             v-if="staticParts[0].register_link == '/'"
                             class="btn btn-primary btn-lg btn-block float-left regBtn"
-                            >
+                    >
                         <span v-bind:class="{'small' : smallerFontSize}">
                             {{registerValue}}
                         </span>
@@ -60,7 +60,6 @@
         name: "Speaker",
         data: function () {
             return {
-                speaker: {},
                 registerValue: 'Registration',
                 smallerFontSize: false,
             }
@@ -68,6 +67,9 @@
             staticParts: function () {
                 return this.$store.getters.getStaticParts;
             },
+            speaker: function () {
+                return this.$store.getters.getCurrentSpeaker;
+            }
         },
         components: {
             SpeakerBlock
@@ -83,18 +85,7 @@
             }
         },
         created() {
-            window.console.log(this.$route.params.id);
-            axios({
-                url: this.$store.getters.getApi + '/speakers/' + this.$route.params.id,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                method: 'GET',
-            }).then((response) => {
-                this.speaker = response.data;
-            }).catch((error) => {
-                this.$router.push('/');
-            })
+            let speakerPromise = this.$store.dispatch('getSpeakerById', this.$route.params.id);
         },
         mounted() {
             scrollTo(0, 0);
@@ -146,9 +137,11 @@
         background-color: white;
         color: #C6C2C4;
     }
+
     .small {
         font-size: 12px;
     }
+
     @media (min-width: 0) and (max-width: 991.98px) {
         #speakersSection {
             height: auto;

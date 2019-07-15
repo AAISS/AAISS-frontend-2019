@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Speaker from './views/Speaker.vue'
 import Staff from './views/Staff'
-import NotFound from './views/NotFound'
 
 Vue.use(Router);
 
@@ -24,6 +23,6 @@ export default new Router({
             name: 'Staff',
             component: Staff
         },
-        {path: "*", component: NotFound}
+        {path: "*", component: Home}
     ]
 })

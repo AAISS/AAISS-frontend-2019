@@ -11,6 +11,7 @@ export default new Vuex.Store({
         staffList: [],
         scientificCommittee: [],
         staticParts: [],
+        currentSpeaker: {},
     },
     mutations: {
         updateSpeakers(state, newSpeakers) {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
         },
         updateScientificCommittee(state, newCommittee) {
             state.scientificCommittee = newCommittee;
+        },
+        updateCurrentSpeaker(state, newSpeaker) {
+            state.currentSpeaker = newSpeaker;
         }
     },
     actions: {
@@ -94,6 +98,23 @@ export default new Vuex.Store({
                     reject(error);
                 })
             })
+        },
+        getSpeakerById: function ({commit}, id) {
+            window.console.log('getting speaker with id:', id);
+            return new Promise((resolve, reject) => {
+                axios({
+                    url: this.getters.getApi + '/speakers/' + id,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: 'GET',
+                }).then((response) => {
+                    commit('updateCurrentSpeaker', response.data);
+                    resolve(response.data);
+                }).catch((error) => {
+                    reject(error);
+                })
+            })
         }
     },
     getters: {
@@ -111,6 +132,8 @@ export default new Vuex.Store({
         },
         getScientificCommittee: state => {
             return state.scientificCommittee;
+        }, getCurrentSpeaker: state => {
+            return state.currentSpeaker;
         }
     }
 })
