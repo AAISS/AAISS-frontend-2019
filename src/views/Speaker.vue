@@ -54,7 +54,6 @@
 
 <script>
     import SpeakerBlock from '../components/SpeakerBlock'
-    import axios from 'axios'
 
     export default {
         name: "Speaker",
@@ -85,6 +84,7 @@
             }
         },
         created() {
+            let staticPartsPromise = this.$store.dispatch('getStaticParts');
             let speakerPromise = this.$store.dispatch('getSpeakerById', this.$route.params.id);
         },
         mounted() {
