@@ -239,16 +239,17 @@
                                 </tr>
                                 <tr>
                                     <td>15</td>
-                                    <td>Uncertainty estimation with Deep Networks (Advanced)</td>
-                                    <td>Hossein Azizpour / Skype</td>
-                                    <td>15:45 – 16:45</td>
-                                </tr>
-                                <tr>
-                                    <td>16</td>
                                     <td>Attacks & Defenses for Deep Neural Networks (Advanced)</td>
                                     <td>Mohammad Khalooei / In person</td>
                                     <td>16:45 – 17:45</td>
                                 </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>A geometric perspective on the robustness of deep networks (Advanced)</td>
+                                    <td>Seyed Mohsen Moosavi Dezfooli / In person</td>
+                                    <td>08:15 – 09:15</td>
+                                </tr>
+
                                 <tr>
                                     <td colspan="4" class="text-center font-weight-bold">3rd Day (Thursday - 25th of
                                         July / 3rd of Mordad)
@@ -256,10 +257,11 @@
                                 </tr>
                                 <tr>
                                     <td>17</td>
-                                    <td>A geometric perspective on the robustness of deep networks (Advanced)</td>
-                                    <td>Seyed-Mohsen Moosavi-Dezfooli / In person</td>
-                                    <td>08:15 – 09:15</td>
+                                    <td>Uncertainty estimation with Deep Networks (Advanced)</td>
+                                    <td>Hossein Azizpour / Skype</td>
+                                    <td>15:45 – 16:45</td>
                                 </tr>
+
                                 <tr>
                                     <td>18</td>
                                     <td>Representation Learning Without Labels (Advanced)</td>
