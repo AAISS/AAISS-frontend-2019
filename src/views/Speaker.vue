@@ -75,7 +75,7 @@
         },
         methods: {
             showRegisterSoonMessage: function () {
-                this.registerValue = 'Registration will be available soon...';
+                this.registerValue = 'Registration is closed.';
                 this.smallerFontSize = true;
                 setTimeout(() => {
                     this.registerValue = 'Registration';
