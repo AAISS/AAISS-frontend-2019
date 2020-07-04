@@ -1,5 +1,5 @@
 module.exports = {
-    publishPath: process.env.NODE_ENV === 'production'
+    baseURL: process.env.NODE_ENV === 'production'
         ? '/2019/'
         : '/'
 }
