@@ -13,19 +13,19 @@
                     <a class="nav-link" @click.prevent="handleHomeButton()">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#aboutSection" class="nav-link">About</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#aboutSection" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#committeeSection" class="nav-link">Committee</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#committeeSection" class="nav-link">Committee</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#speakersSection" class="nav-link">Speakers</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#speakersSection" class="nav-link">Speakers</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#scheduleSection" class="nav-link">Schedule</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#scheduleSection" class="nav-link">Schedule</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/#organizerSection" class="nav-link">Organizer</a>
+                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#organizerSection" class="nav-link">Organizer</a>
                 </li>
                 <li class="nav-item">
                     <router-link to="/staff" class="nav-link">Staff</router-link>
