@@ -41,21 +41,6 @@
                 </div>
             </div>
         </section>
-        <section id="committeeSection">
-            <div class="container">
-                <div class="row pt-5">
-                    <div class="col-md-12">
-                        <h1 class="text-center font-weight-bold text-white">Scientific Committee</h1>
-                    </div>
-                </div>
-                <div class="row pt-3">
-                    <div class="col-lg" :key="scientificCommittee.indexOf(member)"
-                         v-for="member in scientificCommittee">
-                        <CommitteMemberBlock :member="member"></CommitteMemberBlock>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section id="speakersSection">
             <div class="container">
                 <div class="row pt-5">
@@ -66,6 +51,21 @@
                 <div class="row pt-3">
                     <div class="col-lg-3" :key="speaker.id" v-for="speaker in speakers">
                         <SpeakerBlock :speaker="speaker"></SpeakerBlock>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="committeeSection">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-md-12">
+                        <h1 class="text-center font-weight-bold text-white">Scientific Committee</h1>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-lg" :key="scientificCommittee.indexOf(member)"
+                         v-for="member in scientificCommittee">
+                        <CommitteMemberBlock :member="member"></CommitteMemberBlock>
                     </div>
                 </div>
             </div>

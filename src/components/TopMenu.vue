@@ -16,10 +16,10 @@
                     <a href="http://aaiss.ceit.aut.ac.ir/2019/#aboutSection" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#committeeSection" class="nav-link">Committee</a>
-                </li>
-                <li class="nav-item">
                     <a href="http://aaiss.ceit.aut.ac.ir/2019/#speakersSection" class="nav-link">Speakers</a>
+                </li>
+				<li class="nav-item">
+                    <a href="http://aaiss.ceit.aut.ac.ir/2019/#committeeSection" class="nav-link">Committee</a>
                 </li>
                 <li class="nav-item">
                     <a href="http://aaiss.ceit.aut.ac.ir/2019/#scheduleSection" class="nav-link">Schedule</a>
